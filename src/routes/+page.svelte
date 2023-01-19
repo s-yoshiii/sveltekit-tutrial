@@ -1,12 +1,16 @@
 <script>
   export let data;
 </script>
+
+<svelte:head>
+  <title>Blog Article List</title>
+</svelte:head>
 <section class="w-full md:w-2/3 flex flex-col items-center px-3">
   {#each data.contents as content}
     <article class="flex flex-col shadow my-4">
       <!-- Article Image -->
-      <a href="{content.id}" class="hover:opacity-75">
-        <img src="{content.eyecatch?.url}" alt="" />
+      <a href={content.id} class="hover:opacity-75">
+        <img src={content.eyecatch?.url} alt="" />
       </a>
       <div class="bg-white flex flex-col justify-start p-6">
         <a
